@@ -18,12 +18,6 @@ Fluxo Principal
   4. usuario realiza todas as alterações que deseja e pressiona o botão "confirmar".
   5. sistema valida as informações e apresenta a nova lista.
 
-Fluxo Alternativo
-  1. usuario solicita uma edição da lista
-  2. sistema exibe uma tela de confirmação da ação
-  3. usuario confirma a opção 'cancelar' 
-  4. sistema apresenta todas as listas 
-
 
 ## CDU003 - Remover Lista
  Fluxo Principal
