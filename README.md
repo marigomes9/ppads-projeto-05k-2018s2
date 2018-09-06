@@ -6,3 +6,4 @@
 * Victor Piccoli
 * Lucas Gomes
 * Matheus França
+* Mariana Gomes
