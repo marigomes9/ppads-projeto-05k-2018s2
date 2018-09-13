@@ -20,12 +20,9 @@ Fluxo Alternativo 1.1
   
 Fluxo Alternativo 1.2
 
-  1. usuario pressiona o botão "criar nova lista" em seu perfil
-  2. sistema solicita o nome que o usuario deseja dar a lista e o tempo de duração.
-  3. sistema cria a lista, e apresenta para o usuario.
-  4. usuario insere uma tarefa por vez, e inativa a opção de definição de tempo limite para finaliza-la
-  5. apos o usuario inserir todas as tarefas, ele deve confirmar a lista.
-  6. apos a confirmação do usuario, o sistema exibe a lista com todas as tarefas registradas pelo usuario 
+  4.1 usuario insere uma tarefa por vez, e inativa a opção de definição de tempo limite para finaliza-la
+  5.1 apos o usuario inserir todas as tarefas, ele deve confirmar a lista.
+  6.1 apos a confirmação do usuario, o sistema exibe a lista com todas as tarefas registradas pelo usuario 
   
 ## CDU002 - Alterar Lista
 Fluxo Principal
