@@ -5,11 +5,11 @@ Fluxo Principal
   1. usuario pressiona o botão "criar nova lista" em seu perfil
   2. sistema solicita o nome que o usuario deseja dar a lista e o tempo de duração.
   3. sistema cria a lista, e apresenta para o usuario.
-  4. usuario insere uma tarefa por vez, e apos inserir cada tarefa define um tempo limite para finalizar ela.
+  4. usuario insere uma tarefa por vez, e apos inserir cada tarefa define um tempo limite para finaliza-la.
   5. apos o usuario inserir todas as tarefas, ele deve confirmar a lista.
-  6. apos a confirmação do usuario, o sistema exibe a lista com todas as tarefas registradas pelo usuario e o tempo de cada tarefa começa   a ser decrementado.
+  6. apos a confirmação do usuario, o sistema exibe a lista com todas as tarefas registradas pelo usuario e o tempo de cada tarefa começa a ser decrementado.
   
-Fluxo Alternativo
+Fluxo Alternativo 1.1
 
   1. usuario solicita criação de uma nova lista clicando no botão "criar nova lista"
   2. sistema exibe tela para inserção de dados da nova lista
@@ -18,7 +18,15 @@ Fluxo Alternativo
   5. usuario confirma a opção 'cancelar'
   6. sistema exibe tela inicial
   
+Fluxo Alternativo 1.2
 
+  1. usuario pressiona o botão "criar nova lista" em seu perfil
+  2. sistema solicita o nome que o usuario deseja dar a lista e o tempo de duração.
+  3. sistema cria a lista, e apresenta para o usuario.
+  4. usuario insere uma tarefa por vez, e inativa a opção de definição de tempo limite para finaliza-la
+  5. apos o usuario inserir todas as tarefas, ele deve confirmar a lista.
+  6. apos a confirmação do usuario, o sistema exibe a lista com todas as tarefas registradas pelo usuario 
+  
 ## CDU002 - Alterar Lista
 Fluxo Principal
   1. apos a criação da lista (CDU002), o sistema apresentara a lista com a opção de "editar lista"
