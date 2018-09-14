@@ -1,0 +1,50 @@
+const
+  { User } = require('../models/userModel'),
+  { Task } = require('../models/taskModel'),
+  moment = require('moment'),
+  db = require('../config/mongoConnect'),
+  co = require('co')
+
+db
+  .then(() => {
+    co(function * () {
+      try {
+        const users = yield User.find()
+        let tasks = []
+
+        users.map(user => {
+          let
+            date = moment().format(),
+            taskOne = {
+              'user': user._id,
+              'value': 'Começar a usar a lista',
+              'done': true,
+              'created_at': date,
+              'completed_at': date
+            },
+            taskTwo = {
+              'user': user._id,
+              'value': 'Criar minha primeira tarefa',
+              'done': false,
+              'created_at': date,
+              'time_limit': date.add(1, 'h')
+            }
+
+          tasks.push(taskOne, taskTwo)
+        })
+
+        Task.create(tasks, (err, tasks) => {
+          if (err) {
+            console.log(err)
+          }
+
+          console.log(`Lista inicial criada para ${users.lenght} usuários`)
+          process.exit()
+        })
+      } catch (err) {
+        console.log(err)
+        process.exit()
+      }
+    })
+  })
+  .catch((err) => console.log(err))
