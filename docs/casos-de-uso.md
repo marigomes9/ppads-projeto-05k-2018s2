@@ -6,8 +6,9 @@ Fluxo Principal
   2. sistema solicita o nome que o usuario deseja dar a lista e o tempo de duração.
   3. sistema cria a lista, e apresenta para o usuario.
   4. usuario insere uma tarefa por vez, e apos inserir cada tarefa define um tempo limite para finaliza-la.
-  5. apos o usuario inserir todas as tarefas, ele deve confirmar a lista.
-  6. apos a confirmação do usuario, o sistema exibe a lista com todas as tarefas registradas pelo usuario e o tempo de cada tarefa começa a ser decrementado.
+  5. o usuario seleciona uma categoria
+  6. apos o usuario inserir todas as tarefas, ele deve confirmar a lista.
+  7. apos a confirmação do usuario, o sistema exibe a lista com todas as tarefas registradas pelo usuario e o tempo de cada tarefa começa a ser decrementado.
   
 Fluxo Alternativo 3b
 
@@ -16,7 +17,7 @@ Fluxo Alternativo 3b
   3. usuario confirma a opção 'cancelar'
   4. sistema exibe tela inicial
   
-Fluxo Alternativo 4b
+Fluxo Alternativo 5b
 
   1. usuario insere uma tarefa por vez, e inativa a opção de definição de tempo limite para finaliza-la
   2. apos o usuario inserir todas as tarefas, ele deve confirmar a lista.
