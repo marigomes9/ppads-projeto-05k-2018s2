@@ -1,0 +1,103 @@
+image: node:8
+pipelines:
+  custom:
+    prod:
+      - step:
+          caches:
+            - node
+          script:
+            - LAST_COMMIT_MESSAGE=`git log -1 --pretty=%B`
+            - USER_NAME=`git log -1 --pretty=%aN`
+            - USER_EMAIL=`git log -1 --pretty=%ae`
+            - rm -rf .git
+            - git init
+            - git remote add azure https://$AZURE_LOGIN_PROD:$AZURE_PASSWORD_PROD@deca-arquiteto-api.scm.azurewebsites.net:443/deca-arquiteto-api.git
+            - git add .
+            - git config --global user.email "$USER_EMAIL"
+            - git config --global user.name "$USER_NAME"
+            - git commit -m "$LAST_COMMIT_MESSAGE - $BITBUCKET_COMMIT - $USER_EMAIL - $USER_NAME"
+            - git push azure master --force
+    homolog:
+      - step:
+          caches:
+            - node
+          script:
+            - LAST_COMMIT_MESSAGE=`git log -1 --pretty=%B`
+            - USER_NAME=`git log -1 --pretty=%aN`
+            - USER_EMAIL=`git log -1 --pretty=%ae`
+            - rm -rf .git
+            - git init
+            - git remote add azure https://$AZURE_LOGIN_HML:$AZURE_PASSWORD_HML@deca-arquiteto-api-homolog.scm.azurewebsites.net:443/deca-arquiteto-api.git
+            - git add .
+            - git config --global user.email "$USER_EMAIL"
+            - git config --global user.name "$USER_NAME"
+            - git commit -m "$LAST_COMMIT_MESSAGE - $BITBUCKET_COMMIT - $USER_EMAIL - $USER_NAME"
+            - git push azure master --force
+    develop:
+      - step:
+          caches:
+            - node
+          script:
+            - LAST_COMMIT_MESSAGE=`git log -1 --pretty=%B`
+            - USER_NAME=`git log -1 --pretty=%aN`
+            - USER_EMAIL=`git log -1 --pretty=%ae`
+            - rm -rf .git
+            - git init
+            - git remote add azure https://$AZURE_LOGIN_DEV:$AZURE_PASSWORD_DEV@deca-arquiteto-api-dev.scm.azurewebsites.net:443/deca-arquiteto-api.git
+            - git add .
+            - git config --global user.email "$USER_EMAIL"
+            - git config --global user.name "$USER_NAME"
+            - git commit -m "$LAST_COMMIT_MESSAGE - $BITBUCKET_COMMIT - $USER_EMAIL - $USER_NAME"
+            - git push azure master --force
+  branches:
+    master:
+      - step:
+          caches:
+            - node
+          script:
+            - LAST_COMMIT_MESSAGE=`git log -1 --pretty=%B`
+            - USER_NAME=`git log -1 --pretty=%aN`
+            - USER_EMAIL=`git log -1 --pretty=%ae`
+            - rm -rf .git
+            - git init
+            - git remote add azure https://$AZURE_LOGIN_PROD:$AZURE_PASSWORD_PROD@deca-arquiteto-api.scm.azurewebsites.net:443/deca-arquiteto-api.git
+            - git add .
+            - git config --global http.postBuffer 157286400
+            - git config --global user.email "$USER_EMAIL"
+            - git config --global user.name "$USER_NAME"
+            - git commit -m "$LAST_COMMIT_MESSAGE - $BITBUCKET_COMMIT - $USER_EMAIL - $USER_NAME"
+            - git push azure master --force
+    # develop:
+    #   - step:
+    #       caches:
+    #         - node
+    #       script:
+    #         - LAST_COMMIT_MESSAGE=`git log -1 --pretty=%B`
+    #         - USER_NAME=`git log -1 --pretty=%aN`
+    #         - USER_EMAIL=`git log -1 --pretty=%ae`
+    #         - rm -rf .git
+    #         - git init
+    #         - git remote add azure https://$AZURE_LOGIN_HML:$AZURE_PASSWORD_HML@deca-arquiteto-api-homolog.scm.azurewebsites.net:443/deca-arquiteto-api.git
+    #         - git add .
+    #         - git config --global http.postBuffer 1572864000
+    #         - git config --global user.email "$USER_EMAIL"
+    #         - git config --global user.name "$USER_NAME"
+    #         - git commit -m "$LAST_COMMIT_MESSAGE - $BITBUCKET_COMMIT - $USER_EMAIL - $USER_NAME"
+    #         - git push azure master --force
+    release/sprint29:
+      - step:
+          caches:
+            - node
+          script:
+            - LAST_COMMIT_MESSAGE=`git log -1 --pretty=%B`
+            - USER_NAME=`git log -1 --pretty=%aN`
+            - USER_EMAIL=`git log -1 --pretty=%ae`
+            - rm -rf .git
+            - git init
+            - git remote add azure https://$AZURE_LOGIN_DEV:$AZURE_PASSWORD_DEV@deca-arquiteto-api-dev.scm.azurewebsites.net:443/deca-arquiteto-api.git
+            - git add .
+            - git config --global http.postBuffer 1572864000
+            - git config --global user.email "$USER_EMAIL"
+            - git config --global user.name "$USER_NAME"
+            - git commit -m "$LAST_COMMIT_MESSAGE - $BITBUCKET_COMMIT - $USER_EMAIL - $USER_NAME"
+            - git push azure master --force
